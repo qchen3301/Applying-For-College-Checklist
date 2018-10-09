@@ -1,6 +1,7 @@
 const Schema = require('mongoose').Schema
 
 const ActionItemsSchema = new Schema({
+    nameOfSchool: 'String',
     application: Boolean,
     transcript: Boolean,
     letterOfRecommendation: Boolean,
@@ -17,8 +18,7 @@ const SchoolSchema = new Schema({
     name: String,
     abbreviation: String,
     state: String,
-    tuition: Number,
-    actionItems: ActionItemsSchema
+    tuition: Number
 })
 
 const StudentSchema = new Schema({
@@ -31,7 +31,7 @@ const StudentSchema = new Schema({
     lastName: String,
     firstName: String,
     highSchool: String,
-    universities: [SchoolSchema]
+    actionItems: [ActionItemsSchema]
 })
 
 module.exports = {

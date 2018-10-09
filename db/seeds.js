@@ -5,7 +5,8 @@ mongoose.Promise = global.Promise
 
 const {Student, School, ActionItems } = require('./model')
 
-const actItemsForIdiotSchooldevDec = new ActionItems ({
+const actionItem_DevDec = new ActionItems ({
+    nameOfSchool: 'DeVry Institue of Decatur',
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -17,7 +18,8 @@ const actItemsForIdiotSchooldevDec = new ActionItems ({
     progress: 0
 })
 
-const actItemsForIdiotSchooldevCobb = new ActionItems ({
+const actionItem_DevCobb = new ActionItems ({
+    nameOfSchool: 'DeVry Institute of Cobb County',
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -29,7 +31,8 @@ const actItemsForIdiotSchooldevCobb = new ActionItems ({
     progress: 0
 })
 
-const actItemsForDogeSchoolcaltech = new ActionItems ({
+const actionItem_Gt = new ActionItems ({
+    nameOfSchool: 'Georgia Institute of Technology',
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -41,7 +44,8 @@ const actItemsForDogeSchoolcaltech = new ActionItems ({
     progress: 0
 })
 
-const actItemsForDogeSchoolucla = new ActionItems ({
+const actionItem_Uga = new ActionItems ({
+    nameOfSchool: 'University Of Georgia',
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -53,7 +57,8 @@ const actItemsForDogeSchoolucla = new ActionItems ({
     progress: 0
 })
 
-const actItemsForDogeSchoolucsan = new ActionItems ({
+const actionItem_Auburn = new ActionItems ({
+    nameOfSchool: 'University Of Auburn',
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -65,7 +70,8 @@ const actItemsForDogeSchoolucsan = new ActionItems ({
     progress: 0
 })
 
-const actItemsForCChenSchoolyale = new ActionItems ({
+const actionItem_Yale = new ActionItems ({
+    nameOfSchool: 'Yale University',
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -77,7 +83,8 @@ const actItemsForCChenSchoolyale = new ActionItems ({
     progress: 0
 })
 
-const actItemsForCChenSchoolharvard = new ActionItems ({
+const actionItem_Harvard = new ActionItems ({
+    nameOfSchool: 'Harvard University',
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -89,7 +96,8 @@ const actItemsForCChenSchoolharvard = new ActionItems ({
     progress: 0
 })
 
-const actItemsForCChenSchoolcolU = new ActionItems ({
+const actionItem_ColU = new ActionItems ({
+    nameOfSchool: 'University of Columbia in New York City',
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -101,7 +109,8 @@ const actItemsForCChenSchoolcolU = new ActionItems ({
     progress: 0
 })
 
-const actItemsForCChenSchoolpennU = new ActionItems ({
+const actionItem_PennU = new ActionItems ({
+    nameOfSchool: 'University of Pennsylvania',
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -113,7 +122,8 @@ const actItemsForCChenSchoolpennU = new ActionItems ({
     progress: 0
 })
 
-const actItemsForCChenSchoolpton = new ActionItems ({
+const actionItem_Pton = new ActionItems ({
+    nameOfSchool: 'University of Princeton',
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -125,7 +135,8 @@ const actItemsForCChenSchoolpton = new ActionItems ({
     progress: 0
 })
 
-const actItemsForCChenSchoolmit = new ActionItems ({
+const actionItem_Mit = new ActionItems ({
+    nameOfSchool: 'Massachussets Institute of Technology',
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -137,7 +148,8 @@ const actItemsForCChenSchoolmit = new ActionItems ({
     progress: 0
 })
 
-const actItemsForWpWarrenSchoolauburn = new ActionItems ({
+const actionItem_Caltech = new ActionItems ({
+    nameOfSchool: 'California Institute of Technology',
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -149,7 +161,8 @@ const actItemsForWpWarrenSchoolauburn = new ActionItems ({
     progress: 0
 })
 
-const actItemsForMLuongoSchoolgt = new ActionItems ({
+const actionItem_Ucla = new ActionItems ({
+    nameOfSchool: 'University of California Los Angeles',
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -161,7 +174,8 @@ const actItemsForMLuongoSchoolgt = new ActionItems ({
     progress: 0
 })
 
-const actItemsForMLuongoSchooluga = new ActionItems ({
+const actionItem_Ucs = new ActionItems ({
+    nameOfSchool: 'University of California San Diego',
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -172,117 +186,104 @@ const actItemsForMLuongoSchooluga = new ActionItems ({
     fasfa: false,
     progress: 0
 })
+
 
 const caltech = new School({
     name: 'California Institute of Technology',
     abbreviation: 'Caltech',
     state: 'CA',
-    tuition: 45390,
-    actionItems: actItemsForDogeSchoolcaltech
+    tuition: 45390
 })
 
 const ucla = new School({
     name: 'University of California Los Angeles',
     abbreviation: 'UCLA',
     state: 'CA',
-    tuition: 37471,
-    actionItems: actItemsForDogeSchoolucla
+    tuition: 37471
 })
 
-const ucsan = new School({
+const ucs = new School({
     name: 'Univeristy of California San Diego',
     abbreviation: 'UCSD',
     state: 'CA',
-    tuition: 38238,
-    actionItems: actItemsForDogeSchoolucsan
+    tuition: 38238
 })
 
 const yale = new School({
     name: 'Yale University',
     abbreviation: 'Yale',
     state: 'CT',
-    tuition: 47600,
-    actionItems: actItemsForCChenSchoolyale
+    tuition: 47600
 })
 
 const harvard = new School({
     name:'Harvard University',
     abbreviation:'Harvard',
     state:'MA',
-    tuition:45278,
-    actionItems: actItemsForCChenSchoolharvard
+    tuition:45278
 })
 
 const colU = new School({
     name:'Columbia University in the City of New York',
     abbreviation:'Columbia U',
     state:'NY',
-    tuition:53000,
-    actionItems: actItemsForCChenSchoolcolU
+    tuition:53000
 })
 
 const pennU = new School({
     name:'University of Pennsylvania',
     abbreviation:'Penn U',
     state:'PA',
-    tuition:49536,
-    actionItems: actItemsForCChenSchoolpennU
+    tuition:49536
 })
 
 const pton = new School({
     name: 'Princeton University',
     abbreviation: 'Princeton U',
     state: 'NJ',
-    tuition: 43450,
-    actionItems: actItemsForCChenSchoolpton
+    tuition: 43450
 })
 
 const mit = new School({
     name: 'Massachusetts Institute of Technology',
     abbreviation: 'MIT',
     state: 'MA',
-    tuition: 46704,
-    actionItems: actItemsForCChenSchoolmit
+    tuition: 46704
 })
 
 const auburn = new School({
     name: 'Auburn University',
     abbreviation: 'AU',
     state: 'AL',
-    tuition: 28040,
-    actionItems: actItemsForWpWarrenSchoolauburn
+    tuition: 28040
 })
 
 const gt = new School({
     name: 'Georgia Institute of Technology',
     abbreviation: 'GT',
     state: 'GA',
-    tuition: 12204,
-    actionItems: actItemsForMLuongoSchoolgt
+    tuition: 12204
 })
 
 const uga = new School({
     name: 'University of Georgia',
     abbreviation: 'UGA',
     state: 'GA',
-    tuition: 11622,
-    actionItems: actItemsForMLuongoSchooluga
+    tuition: 11622
 })
 
 const devDec = new School({
     name: 'DeVry University Decatur',
     abbreviation: 'n/a',
     state: 'GA',
-    tuition: 15358,
-    actionItems: actItemsForIdiotSchooldevDec
+    tuition: 15358
 })
 
 const devCobb = new School({
     name: 'DeVry University Cobb County',
     abbreviation: 'n/a',
     state: 'GA',
-    tuition: 15358,
-    actionItems: actItemsForIdiotSchooldevCobb
+    tuition: 15358
 })
 
 
@@ -292,7 +293,7 @@ const doge = new Student({
     lastName: 'Shibagane',
     firstName: 'Doge',
     highSchool: 'Good Bois Prep',
-    universities: [caltech, ucla, ucsan]
+    actionItems: [actionItem_Caltech, actionItem_Ucla, actionItem_Ucs]
 })
 
 const cChen = new Student({
@@ -301,7 +302,7 @@ const cChen = new Student({
     lastName: 'Chen',
     firstName: 'Claire',
     highSchool: "Westminster Academy",
-    universities: [yale, harvard, colU, pennU, pton, mit]
+    actionItems: [actionItem_Yale, actionItem_Harvard, actionItem_ColU, actionItem_PennU, actionItem_Pton, actionItem_Mit]
 })
 
 const wpWarren = new Student({
@@ -310,7 +311,7 @@ const wpWarren = new Student({
     lastName: 'Warren',
     firstName: 'Paul',
     highSchool: 'East Coweta High',
-    universities: [auburn]
+    actionItems: [actionItem_Auburn]
 })
 
 const mLuongo = new Student({
@@ -319,7 +320,7 @@ const mLuongo = new Student({
     lastName: 'Luongo',
     firstName: 'Matthew',
     highSchool: 'Parkview High',
-    universities: [gt, uga]
+    actionItems: [actionItem_Gt, actionItem_Uga]
 })
 
 const idiot = new Student({
@@ -328,7 +329,7 @@ const idiot = new Student({
     lastName: 'Chen',
     firstName: 'Qing',
     highSchool: 'Parkview High',
-    universities: [devDec, devCobb]
+    actionItems: [actionItem_DevDec, actionItem_DevCobb]
 })
 
 Student.remove({})
