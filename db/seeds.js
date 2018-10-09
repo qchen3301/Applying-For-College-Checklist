@@ -5,7 +5,163 @@ mongoose.Promise = global.Promise
 
 const {Student, School, ActionItems } = require('./model')
 
-const actItems = new ActionItems ({
+const actItemsForIdiotSchooldevDec = new ActionItems ({
+    application: false,
+    transcript: false,
+    letterOfRecommendation: false,
+    apScores: false,
+    satScores: false,
+    actScores: false,
+    essay: false,
+    fasfa: false,
+    progress: 0
+})
+
+const actItemsForIdiotSchooldevCobb = new ActionItems ({
+    application: false,
+    transcript: false,
+    letterOfRecommendation: false,
+    apScores: false,
+    satScores: false,
+    actScores: false,
+    essay: false,
+    fasfa: false,
+    progress: 0
+})
+
+const actItemsForDogeSchoolcaltech = new ActionItems ({
+    application: false,
+    transcript: false,
+    letterOfRecommendation: false,
+    apScores: false,
+    satScores: false,
+    actScores: false,
+    essay: false,
+    fasfa: false,
+    progress: 0
+})
+
+const actItemsForDogeSchoolucla = new ActionItems ({
+    application: false,
+    transcript: false,
+    letterOfRecommendation: false,
+    apScores: false,
+    satScores: false,
+    actScores: false,
+    essay: false,
+    fasfa: false,
+    progress: 0
+})
+
+const actItemsForDogeSchoolucsan = new ActionItems ({
+    application: false,
+    transcript: false,
+    letterOfRecommendation: false,
+    apScores: false,
+    satScores: false,
+    actScores: false,
+    essay: false,
+    fasfa: false,
+    progress: 0
+})
+
+const actItemsForCChenSchoolyale = new ActionItems ({
+    application: false,
+    transcript: false,
+    letterOfRecommendation: false,
+    apScores: false,
+    satScores: false,
+    actScores: false,
+    essay: false,
+    fasfa: false,
+    progress: 0
+})
+
+const actItemsForCChenSchoolharvard = new ActionItems ({
+    application: false,
+    transcript: false,
+    letterOfRecommendation: false,
+    apScores: false,
+    satScores: false,
+    actScores: false,
+    essay: false,
+    fasfa: false,
+    progress: 0
+})
+
+const actItemsForCChenSchoolcolU = new ActionItems ({
+    application: false,
+    transcript: false,
+    letterOfRecommendation: false,
+    apScores: false,
+    satScores: false,
+    actScores: false,
+    essay: false,
+    fasfa: false,
+    progress: 0
+})
+
+const actItemsForCChenSchoolpennU = new ActionItems ({
+    application: false,
+    transcript: false,
+    letterOfRecommendation: false,
+    apScores: false,
+    satScores: false,
+    actScores: false,
+    essay: false,
+    fasfa: false,
+    progress: 0
+})
+
+const actItemsForCChenSchoolpton = new ActionItems ({
+    application: false,
+    transcript: false,
+    letterOfRecommendation: false,
+    apScores: false,
+    satScores: false,
+    actScores: false,
+    essay: false,
+    fasfa: false,
+    progress: 0
+})
+
+const actItemsForCChenSchoolmit = new ActionItems ({
+    application: false,
+    transcript: false,
+    letterOfRecommendation: false,
+    apScores: false,
+    satScores: false,
+    actScores: false,
+    essay: false,
+    fasfa: false,
+    progress: 0
+})
+
+const actItemsForWpWarrenSchoolauburn = new ActionItems ({
+    application: false,
+    transcript: false,
+    letterOfRecommendation: false,
+    apScores: false,
+    satScores: false,
+    actScores: false,
+    essay: false,
+    fasfa: false,
+    progress: 0
+})
+
+const actItemsForMLuongoSchoolgt = new ActionItems ({
+    application: false,
+    transcript: false,
+    letterOfRecommendation: false,
+    apScores: false,
+    satScores: false,
+    actScores: false,
+    essay: false,
+    fasfa: false,
+    progress: 0
+})
+
+const actItemsForMLuongoSchooluga = new ActionItems ({
     application: false,
     transcript: false,
     letterOfRecommendation: false,
@@ -22,7 +178,7 @@ const caltech = new School({
     abbreviation: 'Caltech',
     state: 'CA',
     tuition: 45390,
-    actionItems: actItems
+    actionItems: actItemsForDogeSchoolcaltech
 })
 
 const ucla = new School({
@@ -30,7 +186,7 @@ const ucla = new School({
     abbreviation: 'UCLA',
     state: 'CA',
     tuition: 37471,
-    actionItems: actItems
+    actionItems: actItemsForDogeSchoolucla
 })
 
 const ucsan = new School({
@@ -38,7 +194,7 @@ const ucsan = new School({
     abbreviation: 'UCSD',
     state: 'CA',
     tuition: 38238,
-    actionItems: actItems
+    actionItems: actItemsForDogeSchoolucsan
 })
 
 const yale = new School({
@@ -46,7 +202,7 @@ const yale = new School({
     abbreviation: 'Yale',
     state: 'CT',
     tuition: 47600,
-    actionItems: actItems
+    actionItems: actItemsForCChenSchoolyale
 })
 
 const harvard = new School({
@@ -54,7 +210,7 @@ const harvard = new School({
     abbreviation:'Harvard',
     state:'MA',
     tuition:45278,
-    actionItems: actItems
+    actionItems: actItemsForCChenSchoolharvard
 })
 
 const colU = new School({
@@ -62,7 +218,7 @@ const colU = new School({
     abbreviation:'Columbia U',
     state:'NY',
     tuition:53000,
-    actionItems: actItems
+    actionItems: actItemsForCChenSchoolcolU
 })
 
 const pennU = new School({
@@ -70,7 +226,7 @@ const pennU = new School({
     abbreviation:'Penn U',
     state:'PA',
     tuition:49536,
-    actionItems: actItems
+    actionItems: actItemsForCChenSchoolpennU
 })
 
 const pton = new School({
@@ -78,7 +234,7 @@ const pton = new School({
     abbreviation: 'Princeton U',
     state: 'NJ',
     tuition: 43450,
-    actionItems: actItems
+    actionItems: actItemsForCChenSchoolpton
 })
 
 const mit = new School({
@@ -86,7 +242,7 @@ const mit = new School({
     abbreviation: 'MIT',
     state: 'MA',
     tuition: 46704,
-    actionItems: actItems
+    actionItems: actItemsForCChenSchoolmit
 })
 
 const auburn = new School({
@@ -94,7 +250,7 @@ const auburn = new School({
     abbreviation: 'AU',
     state: 'AL',
     tuition: 28040,
-    actionItems: actItems
+    actionItems: actItemsForWpWarrenSchoolauburn
 })
 
 const gt = new School({
@@ -102,7 +258,7 @@ const gt = new School({
     abbreviation: 'GT',
     state: 'GA',
     tuition: 12204,
-    actionItems: actItems
+    actionItems: actItemsForMLuongoSchoolgt
 })
 
 const uga = new School({
@@ -110,7 +266,7 @@ const uga = new School({
     abbreviation: 'UGA',
     state: 'GA',
     tuition: 11622,
-    actionItems: actItems
+    actionItems: actItemsForMLuongoSchooluga
 })
 
 const devDec = new School({
@@ -118,7 +274,7 @@ const devDec = new School({
     abbreviation: 'n/a',
     state: 'GA',
     tuition: 15358,
-    actionItems: actItems
+    actionItems: actItemsForIdiotSchooldevDec
 })
 
 const devCobb = new School({
@@ -126,7 +282,7 @@ const devCobb = new School({
     abbreviation: 'n/a',
     state: 'GA',
     tuition: 15358,
-    actionItems: actItems
+    actionItems: actItemsForIdiotSchooldevCobb
 })
 
 
