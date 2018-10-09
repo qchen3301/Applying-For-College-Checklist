@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const {StudentSchema, SchoolSchema, ActionItemsSchema} = require('/.schema')
+const {StudentSchema, SchoolSchema, ActionItemsSchema} = require('./schema')
 
 const StudentModel = mongoose.model('Student', StudentSchema)
 const SchoolModel = mongoose.model('School', SchoolSchema)

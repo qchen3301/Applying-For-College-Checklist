@@ -76,7 +76,7 @@ const pennU = new School({
 const pton = new School({
     name: 'Princeton University',
     abbreviation: 'Princeton U',
-    state: NJ,
+    state: 'NJ',
     tuition: 43450,
     actionItems: actItems
 })
@@ -92,7 +92,7 @@ const mit = new School({
 const auburn = new School({
     name: 'Auburn University',
     abbreviation: 'AU',
-    state: AL,
+    state: 'AL',
     tuition: 28040,
     actionItems: actItems
 })

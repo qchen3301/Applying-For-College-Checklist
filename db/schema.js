@@ -31,7 +31,7 @@ const StudentSchema = new Schema({
     lastName: String,
     firstName: String,
     highSchool: String,
-    universities: [schoolSchema]
+    universities: [SchoolSchema]
 })
 
 module.exports = {
