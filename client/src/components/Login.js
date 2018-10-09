@@ -33,10 +33,14 @@ export default class Login extends Component {
     this.setState({students})
   }
   render() {
+    // const mappo = this.state.students.map((student)=>{
+    //   return <Student {...student} />
+    // })
+
     const studentsList = this.state.students.map((student, i) => {
       return (
         <div key={i}>
-        <Link to={`/students/${student._id}`}>
+        <Link to={`/student/${student._id}`}>
           Name: {student.username}
         </Link>
         </div>
@@ -45,7 +49,7 @@ export default class Login extends Component {
     return (
       <div>
         <h1>Login Page</h1>
-        <p>{studentsList}</p>
+        <h3>{studentsList}</h3>
         <form onSubmit={this.handleSubmit}>
           <input
           type='text'
