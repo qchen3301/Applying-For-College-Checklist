@@ -14,37 +14,29 @@ export default class Login extends Component {
     }
   }
 
-  //call axios directly in the compoDidMount function
   componentDidMount = async () => {
     const response = await axios.get('/api/students')
     this.setState({students: response.data})
   }
 
   handleChange = (event) => {
-    console.log('changing', event.target.name, event.target.value)
-    //take it
     const newStudent = {...this.state.newStudent}
-    //change it???????
     newStudent[event.target.name] = event.target.value
-    //thats it boi...get in thar nice and DEEP like
     this.setState({ newStudent })
   }
 
   handleSubmit = async (event) => {
     event.preventDefault()
     const response = await axios.post('/api/students', this.state.newStudent)
-    //take it
     const students = [...this.state.students]
-    //change eeeet
     students.push(response.data)
-    //put it back
     this.setState({students})
   }
   render() {
     const studentsList = this.state.students.map((student, i) => {
       return (
-        <div>
-        <Link to={`/students/${student._id}`} key={i}>
+        <div key={i}>
+        <Link to={`/students/${student._id}`}>
           Name: {student.username}
         </Link>
         </div>
