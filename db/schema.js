@@ -10,7 +10,7 @@ const ActionItemsSchema = new Schema({
     actScores: Boolean,
     essay: Boolean,
     fasfa: Boolean,
-    progess: Number
+    progress: Number
 
 })
 

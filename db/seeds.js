@@ -1,9 +1,10 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true})
+mongoose.connect(process.env.MONGODB_URI)
 mongoose.Promise = global.Promise
 
 const {Student, School, ActionItems } = require('./model')
+
 
 const actionItem_DevDec = new ActionItems ({
     nameOfSchool: 'DeVry Institue of Decatur',
