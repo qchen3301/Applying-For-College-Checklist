@@ -21,8 +21,8 @@ router.post('/', async (req,res) => {
 })
 
 //UPDATE
-router.put('/:id', async (req,res) => {
-  const student = await Student.findbyIdAndUpdate(req.params.id, req.body, {new: true})
+router.put('/:id/', async (req,res) => {
+  const student = await Student.findByIdAndUpdate(req.params.id, req.body, {new: true})
   res.send(student)
 })
 

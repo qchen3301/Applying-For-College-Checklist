@@ -8,6 +8,7 @@ import Student from './components/Student'
 export default class App extends Component {
   render() {
     const studentComponent = (props) => <Student {...props} />
+
     return (
       <div>
       <Router>
@@ -15,6 +16,7 @@ export default class App extends Component {
           <Route exact path= '/' component={Home} />
           <Route exact path= '/login' component={Login}/> 
           <Route exact path= '/students/:studentId' render={studentComponent} />
+          <Route exact path = '/students/:studentId/edit' render={studentComponent} />
         </Switch>
       </Router>
       </div>
