@@ -1,15 +1,16 @@
 const router = require('express').Router()
-const {Student} = require.apply('../db/model')
+const {Student} = require('../db/model')
 
 //SHOW ALL
 router.get('/', async (req,res)=>{
+  console.log('index triggered')
   const students = await Student.find()
   res.send(students)
 })
 
 //SHOW ONE
 router.get('/:id', async (req,res) => {
-  const student = await Student.findbyId(req.params.id)
+  const student = await Student.findById(req.params.id)
   res.send(student)
 })
 
@@ -26,7 +27,7 @@ router.put('/:id', async (req,res) => {
 })
 
 //DELETE
-router.delete(':/id', async (req,res) => {
+router.delete('/:id', async (req,res) => {
   const student = await Student.findByIdAndRemove(req.params.id)
   res.sendStatus(200)
 })

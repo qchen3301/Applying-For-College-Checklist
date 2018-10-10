@@ -2,7 +2,7 @@ const Schema = require('mongoose').Schema
 
 const ActionItemsSchema = new Schema({
     nameOfSchool: 'String',
-    application: Boolean,
+    application: { type: Boolean, default: false },
     transcript: Boolean,
     letterOfRecommendation: Boolean,
     apScores: Boolean,
