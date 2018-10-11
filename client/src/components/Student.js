@@ -3,47 +3,43 @@ import axios from 'axios'
 import ActionItems from './ActionItems'
 import EditStudent from './EditStudent'
 
-// import {Link} from 'react-router-dom'
-
-//create 
-
 export default class Student extends Component {
   state = {
     student: {},
-    actionItems: [],
     viewMode: true
   }
-
+  //BLOCK 1 - CALL API AND RETRIEVE INFORMATION
   componentDidMount = async () => {
     await this.getStudent()
   }
-
   getStudent = async () => {
     const response = await axios.get(`/api/students/${this.props.match.params.studentId}`)
     let student = response.data
     this.storeStudent(student)
   }
-
   storeStudent = (student) => {
     this.setState({ student })
   }
-
+  //END BLOCK 1
+  //BLOCK 2 - TERNARY TO UPDATE STUDENT MODEL
   changeView = () => {
     this.setState({viewMode: !this.state.viewMode})
   }
+  //END BLOCK 2
+  //BLOCK 3 - HANDLE** FUNCTIONS ON STATE CHANGE
   handleDelete = async (studentId) => {
     await axios.delete(`/api/students/${studentId}`)
     this.props.history.push(`/login`)
   }
-
   handleChange = (event) => {
     const student = {...this.state.student}
     student[event.target.name] = event.target.value
     this.setState({student})
   }
-
+  //END BLOCK 3
+  //BLOCK 4 - FUNCTIONS TO PASS DOWN TO ACTIONITEMS COMPONENT
+  //END BLOCK 4
   render() {
-    
     return (
       <div>
         {this.state.viewMode ? (
@@ -57,9 +53,6 @@ export default class Student extends Component {
           storeStudent = {this.storeStudent}
           changeView = {this.changeView} 
           /> }
-
-
-
         <div>
           <button onClick={() => this.handleDelete(this.state.student._id)}>delete</button>
         </div>
@@ -71,8 +64,3 @@ export default class Student extends Component {
     )
   }
 }
-
-//axios.get(`/api/students/${this.props.match.params.studentId}`)
-//  .then(
-//  (res) =>  console.log(res)
-//)
