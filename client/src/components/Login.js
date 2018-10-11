@@ -80,7 +80,6 @@ export default class Login extends Component {
           onChange = {this.handleChange} />
           <input type='submit' value='Create New Student' />
         </form>
-        Hello world from Login component!!!
       </div>
     )
   }

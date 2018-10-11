@@ -14,6 +14,12 @@ export default class ActionItems extends Component {
     }
   }
 
+  handleChange = (event) => {
+    const newActionItemList = {...this.state.newActionItemList}
+    newActionItemList[event.target.name] = event.target.value
+    this.setState({newActionItemList})
+  }
+
   render() {
     //TERNARY TO WAIT FOR PROPS BEFORE RENDERING INTO COMPONENT
     const items = this.props.actionItems === undefined ? "" :
