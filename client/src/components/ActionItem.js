@@ -22,7 +22,7 @@ export default class ActionItem extends Component {
       <div>
         <h1>{this.props.item.nameOfSchool}</h1>
         <button onClick={()=> this.props.handleDeleteActionItem(this.props.item._id)}>
-            Delete This Action Item
+            Delete This Action Item List
         </button>
         <br />
         Application: 

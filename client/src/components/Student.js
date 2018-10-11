@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import ActionItems from './ActionItems'
 import EditStudent from './EditStudent'
+import swal from 'sweetalert'
 
 export default class Student extends Component {
   state = {
@@ -30,13 +31,7 @@ export default class Student extends Component {
   handleDelete = async (studentId) => {
     await axios.delete(`/api/students/${studentId}`)
     this.props.history.push(`/login`)
-  }
-  handleDeleteActionItem = async (actionItemId) => { 
-    const studentId = this.props.match.params.studentId
-    await axios.delete(`/api/students/${studentId}/actionItems/${actionItemId}`)
-    await this.getStudent()
-  }
-  
+  }  
   handleChange = (event) => {
     const student = {...this.state.student}
     student[event.target.name] = event.target.value
@@ -44,14 +39,24 @@ export default class Student extends Component {
   }
   //END BLOCK 3
   //BLOCK 4 - FUNCTIONS TO PASS DOWN TO ACTIONITEMS COMPONENT
+  handleAddActionItem = async (newActionItemsList) => {   
+    const studentId = this.props.match.params.studentId
+    await axios.post(`/api/students/${studentId}/actionItems`, newActionItemsList)
+    await this.getStudent()
+  }
+  handleDeleteActionItem = async (actionItemId) => { 
+    const studentId = this.props.match.params.studentId
+    await axios.delete(`/api/students/${studentId}/actionItems/${actionItemId}`)
+    await this.getStudent()
+  }
   //END BLOCK 4
   render() {
     return (
       <div>
         {this.state.viewMode ? (
         <div>
-          {this.state.student.firstName} {this.state.student.lastName} <br />
-          {this.state.student.highSchool} Grade {this.state.student.grade} <br />
+          <h2>{this.state.student.firstName} {this.state.student.lastName}</h2> <br /> 
+          <h2>{this.state.student.highSchool} Grade {this.state.student.grade}</h2> <br />
           <button onClick={this.changeView}>Show Edit</button>
         </div>) : 
           <EditStudent 
@@ -65,7 +70,8 @@ export default class Student extends Component {
         <div>
           <ActionItems 
           actionItems = {this.state.student.actionItems} 
-          handleDeleteActionItem = {this.handleDeleteActionItem} />
+          handleDeleteActionItem = {this.handleDeleteActionItem} 
+          handleAddActionItem = {this.handleAddActionItem}/>
         </div>
       </div>
 

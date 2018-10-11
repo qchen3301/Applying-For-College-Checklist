@@ -7,13 +7,11 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
 
-
-
-
 export default class ActionItems extends Component {
-
-  handleChange = (name) => (event) => {
-    this.setState({[name]: event.target.checked})
+  state = {
+    newActionItemList: {
+      name: ''
+    }
   }
 
   render() {
@@ -21,18 +19,24 @@ export default class ActionItems extends Component {
     const items = this.props.actionItems === undefined ? "" :
       this.props.actionItems.map((item, i) => {
         return (
-          <div key={i}>
             <ActionItem 
+            key={item._id}
             item={item} 
-            handleDeleteActionItem = {this.props.handleDeleteActionItem}/>
-        </div> )
+            handleDeleteActionItem = {this.props.handleDeleteActionItem}
+            />
+         )
       })
     //END TERNARY BLOCK
     return (
       <div>
         --------------------------------<br />
+        <div>
+            <form onSubmit={()=>this.props.handleAddActionItem(this.state.newActionItemList)}> 
+                <input type='text' name='universityName' /><br />
+                <input type='Submit' value='Add A New Action Items List For This University'/>
+            </form>
+        </div>
           {items}
-          <button>Add New Action Items List</button>
       </div>
     )
   }
