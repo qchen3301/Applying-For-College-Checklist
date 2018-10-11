@@ -10,7 +10,8 @@ import Button from '@material-ui/core/Button'
 export default class ActionItems extends Component {
   state = {
     newActionItemList: {
-      name: ''
+      nameOfSchool: ''
+
     }
   }
 
@@ -38,7 +39,10 @@ export default class ActionItems extends Component {
         --------------------------------<br />
         <div>
             <form onSubmit={()=>this.props.handleAddActionItem(this.state.newActionItemList)}> 
-                <input type='text' name='universityName' /><br />
+                <input type='text' 
+                name='nameOfSchool' 
+                value={this.state.newActionItemList.nameOfSchool}
+                onChange={this.handleChange}/><br />
                 <input type='Submit' value='Add A New Action Items List For This University'/>
             </form>
         </div>

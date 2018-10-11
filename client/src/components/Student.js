@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import ActionItems from './ActionItems'
 import EditStudent from './EditStudent'
-import swal from 'sweetalert'
 
 export default class Student extends Component {
   state = {
