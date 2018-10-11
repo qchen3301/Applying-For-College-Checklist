@@ -11,7 +11,6 @@ export default class ActionItems extends Component {
   state = {
     newActionItemList: {
       nameOfSchool: ''
-
     }
   }
 

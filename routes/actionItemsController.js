@@ -14,6 +14,25 @@ router.post('/', (req,res) => {
 })
     
 //Update
+router.put('/:id', (req, res) => {
+    Student.findById(req.params.studentId)
+    .then ( (student)=> {
+        const actionItems = student.actionItems.id(req.params.id)
+        const checkboxTrue = req.body
+
+        if(checkboxTrue.application = true) {
+            actionItems.application = true
+        }
+        else {
+            actionItems.application = false
+        }
+
+        return student.save()
+    })
+    .then((student)=> {
+        res.send(student)
+    })
+})
 
 //Delete
 router.delete('/:id', (req,res) => {
