@@ -29,6 +29,7 @@ export default class ActionItem extends Component {
         <button onClick={()=> this.props.handleDeleteActionItem(this.props.item._id)}>
             Delete This Action Item List
         </button>
+        <input type="submit" name="submitList" value="Save My Checklist"/>
         <br />
         <form onSubmit={this.handleSubmit}>
         Application: 
@@ -85,7 +86,6 @@ export default class ActionItem extends Component {
             onChange={this.handleChange('fasfaCheck')}
             value="fasfaCheck" />
         <br />
-        <input type="submit" name="submitList" value="Save My Checklist"/>
         <br/><br/>
         </form>
       </div>

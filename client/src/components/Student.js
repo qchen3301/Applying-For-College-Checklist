@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import ActionItems from './ActionItems'
 import EditStudent from './EditStudent'
-// import swal from 'sweetalert'
 
 export default class Student extends Component {
   state = {
@@ -44,19 +43,10 @@ export default class Student extends Component {
     await axios.post(`/api/students/${studentId}/actionItems`, newActionItemsList)
     await this.getStudent()
   }
-
   handleDeleteActionItem = async (actionItemId) => { 
-    // swal({
-    //   title: "Delete Student Profile?",
-    //   text: "Once deleted a student profile cannot be retrieved - are you sure you want to delete?",
-    //   icon: "warning",
-    //   buttons: true,
-    //   dangerMode: true,
-    // })
-    // .then()
     const studentId = this.props.match.params.studentId
-    await axios.delete(`/api/students/${studentId}/actionItems/${actionItemId}`)
-    await this.getStudent()
+    axios.delete(`/api/students/${studentId}/actionItems/${actionItemId}`)
+    this.getStudent()
   }
   //END BLOCK 4
   render() {
