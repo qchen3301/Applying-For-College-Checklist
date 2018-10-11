@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Checkbox from '@material-ui/core/Checkbox'
+import axios from 'axios'
 
 export default class ActionItem extends Component {
     state = {
@@ -15,6 +16,7 @@ export default class ActionItem extends Component {
 
     handleChange = (name) => (event) => {
         this.setState({ [name]: event.target.checked})
+        axios.put(`/api/students/${this.props.students._id}/actionItems/${this.props.actionItem._id}`, {...this.state})
     }
 
   render() {

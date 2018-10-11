@@ -20,13 +20,9 @@ router.put('/:id', (req, res) => {
         const actionItems = student.actionItems.id(req.params.id)
         const checkboxTrue = req.body
 
-        if(checkboxTrue.application = true) {
-            actionItems.application = true
+        if(checkboxTrue.application) {
+            checkboxTrue.application = actionItems.application 
         }
-        else {
-            actionItems.application = false
-        }
-
         return student.save()
     })
     .then((student)=> {
