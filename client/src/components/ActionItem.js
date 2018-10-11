@@ -18,6 +18,10 @@ export default class ActionItem extends Component {
         this.setState({ [name]: event.target.checked})
     }
 
+    handleSubmit = async () => {
+        await axios.put(`/api/students/${this.props.studentId}/actionItems/${this.props.item._id}`, this.state)
+    }
+
   render() {
     return (
       <div>
@@ -26,7 +30,7 @@ export default class ActionItem extends Component {
             Delete This Action Item List
         </button>
         <br />
-        <form onSubmit="">
+        <form onSubmit={this.handleSubmit}>
         Application: 
         {this.props.item.application} 
         <Checkbox 

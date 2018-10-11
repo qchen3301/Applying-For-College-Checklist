@@ -14,15 +14,18 @@ router.post('/', (req,res) => {
 })
     
 //Update
+//2nd model update route written with help from John Kim
 router.put('/:id', (req, res) => {
     Student.findById(req.params.studentId)
     .then ( (student)=> {
-        const actionItems = student.actionItems.id(req.params.id)
-        const checkboxTrue = req.body
-
-        if(checkboxTrue.application) {
-            checkboxTrue.application = actionItems.application 
-        }
+        const actionItemsForm = student.actionItems.id(req.params.id)
+        //take all keys off req.body and store as array
+        const attr = Object.keys(req.body)
+        //iterate through keys from req.body
+        attr.forEach( checkedBox => {
+            //set the value in actionItemsForms
+            actionItemsForm[checkedBox] = req.body[checkedBox]
+        })
         return student.save()
     })
     .then((student)=> {
