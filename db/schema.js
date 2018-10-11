@@ -3,13 +3,13 @@ const Schema = require('mongoose').Schema
 const ActionItemsSchema = new Schema({
     nameOfSchool: 'String',
     application: { type: Boolean, default: false },
-    transcript: Boolean,
-    letterOfRecommendation: Boolean,
-    apScores: Boolean,
-    satScores: Boolean,
-    actScores: Boolean,
-    essay: Boolean,
-    fasfa: Boolean,
+    transcript: {type: Boolean, default: false },
+    letterOfRecommendation: {type: Boolean, default: false },
+    apScores: {type: Boolean, default: false },
+    satScores: {type: Boolean, default: false },
+    actScores: {type: Boolean, default: false },
+    essay: {type: Boolean, default: false },
+    fasfa: {type: Boolean, default: false },
     progress: Number
 
 })
