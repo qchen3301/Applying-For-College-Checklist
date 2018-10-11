@@ -14,9 +14,8 @@ export default class ActionItem extends Component {
         fasfaCheck: false
     }
 
-    handleChange = (name) => (event) => {
+    handleChange = (name) => async (event) => {
         this.setState({ [name]: event.target.checked})
-        axios.put(`/api/students/${this.props.students._id}/actionItems/${this.props.actionItem._id}`, {...this.state})
     }
 
   render() {
@@ -27,6 +26,7 @@ export default class ActionItem extends Component {
             Delete This Action Item List
         </button>
         <br />
+        <form onSubmit="">
         Application: 
         {this.props.item.application} 
         <Checkbox 
@@ -81,7 +81,9 @@ export default class ActionItem extends Component {
             onChange={this.handleChange('fasfaCheck')}
             value="fasfaCheck" />
         <br />
+        <input type="submit" name="submitList" value="Save My Checklist"/>
         <br/><br/>
+        </form>
       </div>
     )
   }

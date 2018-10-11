@@ -10,13 +10,11 @@ export default class EditStudent extends Component {
             highSchool: this.props.studentInfo.highSchool
         }
     }
-
     handleChange = (event) => {
         const studentInfo = {...this.state.studentInfo}
         studentInfo[event.target.name] = event.target.value
         this.setState({studentInfo})
     }
-
     handleSubmit = async () => {
         //make an axios put request
         await axios.put(`/api/students/${this.props.studentInfo._id}`, this.state.studentInfo)
@@ -25,7 +23,6 @@ export default class EditStudent extends Component {
         //call function that that toggles display
         this.props.changeView()
     }
-    
   render() {
     return (
       <div>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import ActionItem from './ActionItem'
 
-import { withStyles } from '@material-ui/core/styles'
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
-import Button from '@material-ui/core/Button'
+// import { withStyles } from '@material-ui/core/styles'
+// import Card from '@material-ui/core/Card'
+// import CardActions from '@material-ui/core/CardActions'
+// import CardContent from '@material-ui/core/CardContent'
+// import Button from '@material-ui/core/Button'
 
 export default class ActionItems extends Component {
   state = {
@@ -29,6 +29,7 @@ export default class ActionItems extends Component {
             key={item._id}
             item={item} 
             handleDeleteActionItem = {this.props.handleDeleteActionItem}
+            studentId = {this.props.studentId}
             />
          )
       })
