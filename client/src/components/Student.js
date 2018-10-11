@@ -33,7 +33,7 @@ export default class Student extends Component {
   }
   handleDeleteActionItem = async (actionItemId) => { 
     const studentId = this.props.match.params.studentId
-    await axios.delete(`/api/students/${studentId}/actionitem/${actionItemId}`)
+    await axios.delete(`/api/students/${studentId}/actionItems/${actionItemId}`)
     await this.getStudent()
   }
   
