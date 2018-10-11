@@ -31,6 +31,12 @@ export default class Student extends Component {
     await axios.delete(`/api/students/${studentId}`)
     this.props.history.push(`/login`)
   }
+  handleDeleteActionItem = async (actionItemId) => { 
+    const studentId = this.props.match.params.studentId
+    await axios.delete(`/api/students/${studentId}/actionitem/${actionItemId}`)
+    await this.getStudent()
+  }
+  
   handleChange = (event) => {
     const student = {...this.state.student}
     student[event.target.name] = event.target.value
@@ -57,7 +63,9 @@ export default class Student extends Component {
           <button onClick={() => this.handleDelete(this.state.student._id)}>delete</button>
         </div>
         <div>
-          <ActionItems actionItems = {this.state.student.actionItems} />
+          <ActionItems 
+          actionItems = {this.state.student.actionItems} 
+          handleDeleteActionItem = {this.handleDeleteActionItem} />
         </div>
       </div>
 

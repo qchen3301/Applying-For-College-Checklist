@@ -9,7 +9,6 @@ import ActionItems from './components/ActionItems'
 export default class App extends Component {
   render() {
     const studentComponent = (props) => <Student {...props} />
-    // const actionItemsComponent = (props) => <ActionItems {...props} />
 
     return (
       <div>
@@ -19,7 +18,6 @@ export default class App extends Component {
           <Route exact path= '/login' component={Login}/> 
           <Route exact path= '/students/:studentId' render={studentComponent} />
           <Route exact path = '/students/:studentId/edit' render={studentComponent} />
-          {/* <Route exact path = '/students/:studentId/actionItems' render={actionItemsComponent} /> */}
         </Switch>
       </Router>
       </div>
