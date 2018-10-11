@@ -3,11 +3,13 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Home from './components/Home'
 import Login from './components/Login'
 import Student from './components/Student'
+import ActionItems from './components/ActionItems'
 
 
 export default class App extends Component {
   render() {
     const studentComponent = (props) => <Student {...props} />
+    // const actionItemsComponent = (props) => <ActionItems {...props} />
 
     return (
       <div>
@@ -17,6 +19,7 @@ export default class App extends Component {
           <Route exact path= '/login' component={Login}/> 
           <Route exact path= '/students/:studentId' render={studentComponent} />
           <Route exact path = '/students/:studentId/edit' render={studentComponent} />
+          {/* <Route exact path = '/students/:studentId/actionItems' render={actionItemsComponent} /> */}
         </Switch>
       </Router>
       </div>

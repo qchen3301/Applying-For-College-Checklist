@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import ActionItems from './ActionItems'
-import EditStudent from './EditStudent';
+import EditStudent from './EditStudent'
 
 // import {Link} from 'react-router-dom'
 
@@ -10,6 +10,7 @@ import EditStudent from './EditStudent';
 export default class Student extends Component {
   state = {
     student: {},
+    actionItems: [],
     viewMode: true
   }
 
@@ -63,7 +64,7 @@ export default class Student extends Component {
           <button onClick={() => this.handleDelete(this.state.student._id)}>delete</button>
         </div>
         <div>
-         <ActionItems actionItems={this.state.student.actionItems}/>
+          <ActionItems actionItems = {this.state.student.actionItems} />
         </div>
       </div>
 
