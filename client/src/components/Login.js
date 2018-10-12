@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  height: 75vh;
 `
 const StyledInputSubmit = styled.input`
   background: white;
@@ -18,6 +18,9 @@ const StyledInputSubmit = styled.input`
   padding: 0.25em 1em;
   border: 2px solid palevioletred;
   border-radius: 3px;
+`
+const StyledListFont = styled.div`
+  font-family: 'PT Sans', sans-serif;
 `
 
 export default class Login extends Component {
@@ -53,9 +56,9 @@ export default class Login extends Component {
   render() {
     const studentsList = this.state.students.map((student, i) => {
       return (
-          <div key={i}>
+          <StyledListFont key={i}>
             <Link to={`/students/${student._id}`}>{student.username}<br /></Link>
-          </div>
+          </StyledListFont>
       )
     })
     return (
@@ -77,7 +80,7 @@ export default class Login extends Component {
             <StyledInputSubmit type='submit' value='Create New Student' />
         </form>
         </Paper>
-        </StyledDiv>
+      </StyledDiv>
     )
   }
 }
