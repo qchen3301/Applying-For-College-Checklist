@@ -82,10 +82,6 @@ export default class Student extends Component {
               <StyledButton onClick={this.changeView}>Edit Student Information</StyledButton>
               <StyledButton onClick={() => this.handleDelete(this.state.student._id)}>DELETE</StyledButton>
             </Paper>
-          <div>
-          
-          
-          </div>
           </StyledDiv>) : 
           <EditStudent 
           studentInfo = {this.state.student}
