@@ -24,15 +24,17 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(__dirname + '/client/build'))
 
-//configuring app to use react for routes
-app.get('/', (req,res) => {
-    res.sendFile(__dirname + '/client/build/index.html')
-})
-
 const studentsController = require('./routes/studentsController')
 app.use('/api/students', studentsController)
 
 const actionItemsController = require('./routes/actionItemsController')
 app.use('/api/students/:studentId/actionItems', actionItemsController)
+
+app.get('/api/*', res.sendStatus(404))
+
+//configuring app to use react for routes
+app.get('/*', (req,res) => {
+    res.sendFile(__dirname + '/client/build/index.html')
+})
 
 module.exports = app
