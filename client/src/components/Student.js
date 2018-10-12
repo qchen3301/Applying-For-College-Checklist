@@ -1,7 +1,27 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import styled from 'styled-components'
+import TextField from '@material-ui/core/TextField'
+import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
 import ActionItems from './ActionItems'
 import EditStudent from './EditStudent'
+
+const StyledDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 2em;
+`
+const StyledButton = styled.button`
+  background: white;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`
 
 export default class Student extends Component {
   state = {
@@ -52,20 +72,27 @@ export default class Student extends Component {
   render() {
     return (
       <div>
+        {/* BEGIN TERNARY BLOCK TO SWITCH BETWEEN VIEW STUDENT INFORMATION AND EDIT STUDENT INFORMATION */}
         {this.state.viewMode ? (
-        <div>
-          <h2>{this.state.student.firstName} {this.state.student.lastName}</h2> <br /> 
-          <h2>{this.state.student.highSchool} Grade {this.state.student.grade}</h2> <br />
-          <button onClick={this.changeView}>Show Edit</button>
-        </div>) : 
+          <StyledDiv>
+            <Paper elevation={3} style={{padding: 14}}>
+              {this.state.student.firstName} {this.state.student.lastName} <br />
+              {this.state.student.highSchool} <br/>
+              Grade {this.state.student.grade} <br />
+              <StyledButton onClick={this.changeView}>Edit Student Information</StyledButton>
+              <StyledButton onClick={() => this.handleDelete(this.state.student._id)}>DELETE</StyledButton>
+            </Paper>
+          <div>
+          
+          
+          </div>
+          </StyledDiv>) : 
           <EditStudent 
           studentInfo = {this.state.student}
           storeStudent = {this.storeStudent}
           changeView = {this.changeView} 
           /> }
-        <div>
-          <button onClick={() => this.handleDelete(this.state.student._id)}>DELETE</button>
-        </div>
+        {/* END TERNARY BLOCK */}
         <div>
           <ActionItems
           studentId = {this.props.match.params.studentId} 
@@ -74,7 +101,6 @@ export default class Student extends Component {
           handleAddActionItem = {this.handleAddActionItem}/>
         </div>
       </div>
-
     )
   }
 }
