@@ -6,14 +6,14 @@ const StyledDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 `
 
 export default class Home extends Component {
   render() {
     return (
       <StyledDiv>
-        <img src="" alt="COLLEGE"/>
-        <Link to='/login'>Continue</Link>
+        <Link to='/login'><img src="https://raw.githubusercontent.com/qchen3301/Applying-For-College-Checklist/master/assets/splash.jpg" alt="COLLEGE"/></Link>
       </StyledDiv>
     )
   }
