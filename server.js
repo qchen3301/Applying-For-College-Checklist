@@ -30,7 +30,9 @@ app.use('/api/students', studentsController)
 const actionItemsController = require('./routes/actionItemsController')
 app.use('/api/students/:studentId/actionItems', actionItemsController)
 
-app.get('/api/*', res.sendStatus(404))
+app.get('/api/*', (req,res)=> {
+    res.sendStatus(404)
+    })
 
 //configuring app to use react for routes
 app.get('/*', (req,res) => {
