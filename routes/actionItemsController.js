@@ -14,18 +14,20 @@ router.post('/', (req,res) => {
 })
     
 //Update
-//2nd model update route written with help from John Kim
+//2nd model update route written with help from John Kim and James Royals
 router.put('/:id', (req, res) => {
     Student.findById(req.params.studentId)
     .then ( (student)=> {
-        const actionItemsForm = student.actionItems.id(req.params.id)
-        //take all keys off req.body and store as array
-        const attr = Object.keys(req.body)
-        //iterate through keys from req.body
-        attr.forEach( checkedBox => {
-            //set the value in actionItemsForms
-            actionItemsForm[checkedBox] = req.body[checkedBox]
-        })
+        const updatedActionItems = req.body
+        const actionItems = student.actionItems.id(req.params.id)
+            actionItems.application = updatedActionItems.applicationCheck
+            actionItems.transcript = updatedActionItems.transcriptCheck
+            actionItems.letterOfRecommendation = updatedActionItems.letterOfRecommendationCheck
+            actionItems.apScores = updatedActionItems.apScoresCheck
+            actionItems.satScores = updatedActionItems.satScoresCheck
+            actionItems.actScores = updatedActionItems.actScoresCheck
+            actionItems.essay = updatedActionItems.essayCheck
+            actionItems.fasfa = updatedActionItems.fasfaCheck
         return student.save()
     })
     .then((student)=> {

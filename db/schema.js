@@ -9,9 +9,7 @@ const ActionItemsSchema = new Schema({
     satScores: {type: Boolean, default: false },
     actScores: {type: Boolean, default: false },
     essay: {type: Boolean, default: false },
-    fasfa: {type: Boolean, default: false },
-    progress: Number
-
+    fasfa: {type: Boolean, default: false }
 })
 
 const SchoolSchema = new Schema({
