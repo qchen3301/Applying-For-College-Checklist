@@ -14,10 +14,10 @@ export default class App extends Component {
       <div>
       <Router>
         <Switch>
-          <Route exact path= '/' component={Home} />
           <Route exact path= '/login' component={Login}/> 
           <Route exact path= '/students/:studentId' render={studentComponent} />
           <Route exact path = '/students/:studentId/edit' render={studentComponent} />
+          <Route path='/' component={Home} /> 
         </Switch>
       </Router>
       </div>
