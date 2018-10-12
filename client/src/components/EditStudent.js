@@ -4,6 +4,17 @@ import TextField from '@material-ui/core/TextField'
 import styled from 'styled-components'
 import Paper from '@material-ui/core/Paper'
 
+const StyledDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 2em;
+`
+
 const StyledInputSubmit = styled.input`
   background: white;
   margin: 1em;
@@ -43,7 +54,8 @@ export default class EditStudent extends Component {
     }
   render() {
     return (
-      <Paper elevation={3} style={{padding: 14}}>
+      <StyledDiv>
+      <Paper elevation={3} style={{padding: 14, maxWidth: 300}}>
         <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
         <TextField id='outlined-name' label='First Name' name='firstName' value={this.state.studentInfo.firstName} onChange={this.handleChange}/><br/>
         <TextField id='outlined-name' label='Last Name' name='lastName' value={this.state.studentInfo.lastName} onChange={this.handleChange}/><br/>
@@ -53,6 +65,7 @@ export default class EditStudent extends Component {
         <StyledButton>Cancel</StyledButton>
         </form>
       </Paper>
+      </StyledDiv>
     )
   }
 }
