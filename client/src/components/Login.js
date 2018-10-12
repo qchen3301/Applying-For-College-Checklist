@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 75vh;
+  height: 45vh;
 `
 const StyledInputSubmit = styled.input`
   background: white;
@@ -62,13 +62,16 @@ export default class Login extends Component {
       )
     })
     return (
-      <StyledDiv>
+      <div>
+        <StyledDiv>
         <Paper elevation={2} style={{padding: 14}}>
           <Typography variant='h4'>
             <Typography variant='h5'>Select Student Account</Typography>
             {studentsList}
           </Typography>
         </Paper>
+        </StyledDiv>
+        <StyledDiv>
         <Paper elevation={2} style={{padding: 14}}>
         <Typography variant='h5'>Create New Student Account</Typography>
         <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
@@ -80,7 +83,8 @@ export default class Login extends Component {
             <StyledInputSubmit type='submit' value='Create New Student' />
         </form>
         </Paper>
-      </StyledDiv>
+        </StyledDiv>
+      </div>
     )
   }
 }

@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
 import ActionItems from './ActionItems'
 import EditStudent from './EditStudent'
+
+const MaterialButtonDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
+`
 
 const StyledDiv = styled.div`
   display: flex;
@@ -41,9 +47,12 @@ export default class Student extends Component {
     this.setState({ student })
   }
   //END BLOCK 1
-  //BLOCK 2 - TERNARY TO UPDATE STUDENT MODEL
+  //BLOCK 2 - TERNARY TO UPDATE STUDENT MODEL & RETURN TO PREVIOUS PAGE
   changeView = () => {
     this.setState({viewMode: !this.state.viewMode})
+  }
+  goBackLogin = () => {
+    this.props.history.push('/login')
   }
   //END BLOCK 2
   //BLOCK 3 - HANDLE** FUNCTIONS ON STATE CHANGE
@@ -72,6 +81,9 @@ export default class Student extends Component {
   render() {
     return (
       <div>
+        <MaterialButtonDiv>
+          <Button variant="outlined" color="secondary" onClick={()=>{this.goBackLogin()}}>Return</Button>
+        </MaterialButtonDiv>
         {/* BEGIN TERNARY BLOCK TO SWITCH BETWEEN VIEW STUDENT INFORMATION AND EDIT STUDENT INFORMATION */}
         {this.state.viewMode ? (
           <StyledDiv>
