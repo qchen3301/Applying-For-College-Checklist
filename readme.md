@@ -27,6 +27,7 @@ This app was designed with my younger sister in mind. She will be applying to co
 ### Trello and Heroku Live-site
 ---
 [Heroku](https://floating-scrubland-20446.herokuapp.com/)
+
 [Trello](https://trello.com/b/HVkxVdAr/ga-wdi-17-project-3)
 
 ### Technologies Used
