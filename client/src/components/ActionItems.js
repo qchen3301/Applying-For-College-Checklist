@@ -33,7 +33,7 @@ export default class ActionItems extends Component {
   render() {
     //TERNARY TO WAIT FOR PROPS BEFORE RENDERING INTO COMPONENT
     const items = this.props.actionItems === undefined ? "" :
-      this.props.actionItems.map((item, i) => {
+      this.props.actionItems.map((item) => {
         return (
             <ActionItem 
             key={item._id}

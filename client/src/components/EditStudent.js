@@ -56,7 +56,7 @@ export default class EditStudent extends Component {
     return (
       <StyledDiv>
       <Paper elevation={3} style={{padding: 14, maxWidth: 300}}>
-        <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
+        <form onSubmit={this.handleSubmit} autoComplete="off">
         <TextField id='outlined-name' label='First Name' name='firstName' value={this.state.studentInfo.firstName} onChange={this.handleChange}/><br/>
         <TextField id='outlined-name' label='Last Name' name='lastName' value={this.state.studentInfo.lastName} onChange={this.handleChange}/><br/>
         <TextField id='outlined-number' label='Grade' name='grade' value={this.state.studentInfo.grade} onChange={this.handleChange}/><br/>
