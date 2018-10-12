@@ -4,22 +4,24 @@ import axios from 'axios'
 
 export default class ActionItem extends Component {
     state = {
-        applicationCheck: false,
-        transcriptCheck: false,
-        letterOfRecommendationCheck: false,
-        apScoresCheck: false,
-        satScoresCheck: false,
-        actScoresCheck: false,
-        essayCheck: false,
-        fasfaCheck: false
+        applicationCheck: this.props.item.application,
+        transcriptCheck: this.props.item.transcript,
+        letterOfRecommendationCheck: this.props.item.letterOfRecommendation,
+        apScoresCheck: this.props.item.apScores,
+        satScoresCheck: this.props.item.satScores,
+        actScoresCheck: this.props.item.actScores,
+        essayCheck: this.props.item.essay,
+        fasfaCheck: this.props.item.fasfa
     }
 
     handleChange = (name) => async (event) => {
         this.setState({ [name]: event.target.checked})
     }
 
-    handleSubmit = async () => {
+    handleSubmit = async (event) => {
+        event.preventDefault()
         await axios.put(`/api/students/${this.props.studentId}/actionItems/${this.props.item._id}`, this.state)
+        console.log("is this even working???", this.state)
     }
 
   render() {
@@ -29,9 +31,10 @@ export default class ActionItem extends Component {
         <button onClick={()=> this.props.handleDeleteActionItem(this.props.item._id)}>
             Delete This Action Item List
         </button>
-        <input type="submit" name="submitList" value="Save My Checklist"/>
+        
         <br />
         <form onSubmit={this.handleSubmit}>
+        <input type="submit" name="submitList" value="Save My Checklist"/>
         Application: 
         {this.props.item.application} 
         <Checkbox 
