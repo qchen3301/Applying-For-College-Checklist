@@ -1,11 +1,21 @@
 import React, { Component } from 'react'
 import ActionItem from './ActionItem'
+import TextField from '@material-ui/core/TextField'
+import styled from 'styled-components'
+import Paper from '@material-ui/core/Paper'
 
-// import { withStyles } from '@material-ui/core/styles'
-// import Card from '@material-ui/core/Card'
-// import CardActions from '@material-ui/core/CardActions'
-// import CardContent from '@material-ui/core/CardContent'
-// import Button from '@material-ui/core/Button'
+const StyledInputSubmit = styled.input`
+  background: white;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`
+const StyledDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 export default class ActionItems extends Component {
   state = {
@@ -36,17 +46,16 @@ export default class ActionItems extends Component {
     //END TERNARY BLOCK
     return (
       <div>
-        --------------------------------<br />
-        <div>
-            <form onSubmit={()=>this.props.handleAddActionItem(this.state.newActionItemList)}> 
-                <input type='text' 
-                name='nameOfSchool' 
-                value={this.state.newActionItemList.nameOfSchool}
-                onChange={this.handleChange}/><br />
-                <input type='Submit' value='Add A New Action Items List For This University'/>
-            </form>
-        </div>
-          {items}
+      <StyledDiv>
+        <Paper elevation={4} style={{padding: 14, maxWidth: 500, maxHeight: 100}}>
+          <form onSubmit={()=>this.props.handleAddActionItem(this.state.newActionItemList)}> 
+            <TextField id='outlined-name' label='University' name='nameOfSchool' value={this.state.newActionItemList.nameOfSchool} onChange={this.handleChange}/><br />
+            <StyledInputSubmit type='Submit' value='Add A New Action Items List For This University'/>
+          </form>
+        </Paper>
+      </StyledDiv>
+      <br /> <br />
+      {items}
       </div>
     )
   }

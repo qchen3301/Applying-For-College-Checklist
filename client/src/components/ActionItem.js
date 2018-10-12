@@ -1,6 +1,29 @@
 import React, { Component } from 'react'
-import Checkbox from '@material-ui/core/Checkbox'
 import axios from 'axios'
+import styled from 'styled-components'
+import Paper from '@material-ui/core/Paper'
+import Checkbox from '@material-ui/core/Checkbox'
+
+const StyledDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const StyledInputSubmit = styled.input`
+  background: white;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`
+const StyledButton = styled.button`
+  background: white;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`
 
 export default class ActionItem extends Component {
     state = {
@@ -26,72 +49,41 @@ export default class ActionItem extends Component {
 
   render() {
     return (
-      <div>
-        <h1>{this.props.item.nameOfSchool}</h1>
-        <button onClick={()=> this.props.handleDeleteActionItem(this.props.item._id)}>
-            Delete This Action Item List
-        </button>
-        
-        <br />
+      <StyledDiv>
         <form onSubmit={this.handleSubmit}>
-        <input type="submit" name="submitList" value="Save My Checklist"/>
-        Application: 
-        {this.props.item.application} 
-        <Checkbox 
-            checked={this.state.applicationCheck}
-            onChange={this.handleChange('applicationCheck')}
-            value="applicationCheck" />
-        <br />
-        Transcript: 
-        {this.props.item.transcript}
-        <Checkbox 
-            checked={this.state.transcriptCheck}
-            onChange={this.handleChange('transcriptCheck')}
-            value="transcriptCheck" />
-        <br />
-        Letter Of Recommendation: 
-        {this.props.item.letterOfRecommendation}
-        <Checkbox 
-            checked={this.state.letterOfRecommendationCheck}
-            onChange={this.handleChange('letterOfRecommendationCheck')}
-            value="letterOfRecommendationCheck" />
-        <br />
-        AP Scores: {this.props.item.apScores}
-        <Checkbox 
-            checked={this.state.apScoresCheck}
-            onChange={this.handleChange('apScoresCheck')}
-            value="apScoresCheck" />
-        <br />
-        SAT Scores: {this.props.item.satScores}
-        <Checkbox 
-            checked={this.state.satScoresCheck}
-            onChange={this.handleChange('satScoresCheck')}
-            value="satScoresCheck" />
-        <br />
-        ACT Scores: 
-        {this.props.item.actScores}
-        <Checkbox 
-            checked={this.state.actScoresCheck}
-            onChange={this.handleChange('actScoresCheck')}
-            value="actScoresCheck" />
-        <br />
-        Entrance Essay:
-        {this.props.item.essay}
-        <Checkbox 
-            checked={this.state.essayCheck}
-            onChange={this.handleChange('essayCheck')}
-            value="essayCheck" />
-        <br />
-        FASFA: 
-        {this.props.item.fasfa}
-        <Checkbox 
-            checked={this.state.fasfaCheck}
-            onChange={this.handleChange('fasfaCheck')}
-            value="fasfaCheck" />
-        <br />
-        <br/><br/>
+            <Paper elevation={5} style={{padding: 14, maxWidth: 700}}>
+            <h1>{this.props.item.nameOfSchool}</h1>
+            Application: 
+            <Checkbox checked={this.state.applicationCheck} onChange={this.handleChange('applicationCheck')} value="applicationCheck" />
+            <br />
+            Transcript: 
+            <Checkbox checked={this.state.transcriptCheck} onChange={this.handleChange('transcriptCheck')} value="transcriptCheck" />
+            <br />
+            Letter Of Recommendation: 
+            <Checkbox checked={this.state.letterOfRecommendationCheck} onChange={this.handleChange('letterOfRecommendationCheck')} value="letterOfRecommendationCheck" />
+            <br />
+            AP Scores: 
+            <Checkbox checked={this.state.apScoresCheck} onChange={this.handleChange('apScoresCheck')} value="apScoresCheck" />
+            <br />
+            SAT Scores: 
+            <Checkbox checked={this.state.satScoresCheck} onChange={this.handleChange('satScoresCheck')} value="satScoresCheck" />
+            <br />
+            ACT Scores: 
+            <Checkbox checked={this.state.actScoresCheck} onChange={this.handleChange('actScoresCheck')} value="actScoresCheck" />
+            <br />
+            Entrance Essay:
+            <Checkbox checked={this.state.essayCheck} onChange={this.handleChange('essayCheck')} value="essayCheck" />
+            <br />
+            FASFA: 
+            <Checkbox checked={this.state.fasfaCheck} onChange={this.handleChange('fasfaCheck')} value="fasfaCheck" />
+            <br />
+            <StyledInputSubmit type="submit" name="submitList" value="Save My Checklist"/>
+            <StyledButton onClick={()=> this.props.handleDeleteActionItem(this.props.item._id)}>
+                Delete This Action Item List
+            </StyledButton>
+            </Paper>
         </form>
-      </div>
+      </StyledDiv>
     )
   }
 }
